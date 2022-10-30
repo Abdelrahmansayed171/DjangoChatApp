@@ -1,0 +1,9 @@
+1- python3 -m django --version
+2- pip --version
+3- pip install --upgrade pip
+4- pip install --upgrade django==4.1.2
+5- python -m virtualenv env
+6- env\Scripts\activate
+7- deactivate
+8- from django.urls import path, include (@urls files)
+9- from . import views                   (@urls files)
