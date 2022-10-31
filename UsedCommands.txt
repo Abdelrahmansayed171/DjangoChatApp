@@ -9,3 +9,4 @@
 9-  from . import views                   (@urls files)
 10- from django.contrib.auth.forms import UserCreationForm  (@forms.py)
 11- from django.contrib.auth.models import User             (@forms.py)
+12- git rm -r --cached myFolder (@cmd) to delete folder from git repo
