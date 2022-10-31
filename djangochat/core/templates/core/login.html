@@ -1,0 +1,41 @@
+{% extends 'core/index.html' %}
+
+{% block title %}Log in | {% endblock %}
+
+{% block content %} 
+    <div class="p-10 lg:p-20 text-center">
+        <h1 class="text-3xl lg:text-6xl text-white">Log in</h1>
+    </div>
+    <!-- lg > command for Desktop devices (the width shouldn't exceed 1/4 of the screen) --> 
+    <!-- px > command for padding left and right (X-Axis)  -->
+    <!-- mx > command for margin left and right (X-Axis)   --> 
+    
+    <form method="post" action= "." class="lg:w-1/4 px-4 mx-auto">
+        {% csrf_token %}
+        <div class="mb-5">
+            <label class="text-white">UserName</label>
+
+            <input type="text" name="username" class="w-full mt-2 px-4 py-2 rounded-xl">
+        </div>
+
+        <div class="mb-5">
+            <label class="text-white">Password</label>
+
+            <input type="password" name="password" class="w-full mt-2 px-4 py-2 rounded-xl">
+        </div>
+
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="mb-5 p-4 rounded-xl bg-red-300 text-white">
+                        <p>{{error|escape}} </p>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+        
+        <div class="text-center">
+            <button class="px-5 py-4 rounded-xl text-white bg-teal-800 hover:bg-teal-700">Log in</button>
+        </div>
+    </form>
+{% endblock %}
